@@ -3,7 +3,5 @@
     "type": "project",
     "require": {
         "react/http": "^1.9"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
