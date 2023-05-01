@@ -1,0 +1,7 @@
+{
+    "name": "wpjscc/reactphp-http-proxy",
+    "type": "project",
+    "require": {
+        "react/http": "^1.9"
+    }
+}
