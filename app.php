@@ -18,7 +18,10 @@ $http = new React\Http\HttpServer(
 
     return new React\Promise\Promise(function ($resolve, $reject) use ($host, $port) {
         
-        (new React\Socket\Connector(array('timeout' => 3.0)))->connect("tcp://$host:$port")
+        (new React\Socket\Connector(array(
+            'timeout' => 3.0,
+            //'tcp' => new Clue\React\HttpProxy\ProxyConnector('192.168.43.1:8234') //可以做个跳板
+        )))->connect("tcp://$host:$port")
         ->then(function (React\Socket\ConnectionInterface $connection) use ($resolve) {
             $in = new ThroughStream;
             $out = new ThroughStream;
