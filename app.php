@@ -20,8 +20,9 @@ $http = new React\Http\HttpServer(
         
         (new React\Socket\Connector(array(
             'timeout' => 3.0,
-            //'tcp' => new Clue\React\HttpProxy\ProxyConnector('192.168.43.1:8234'), //可以做个跳板
-            //'dns' => false,
+            // 'tcp' => new Clue\React\HttpProxy\ProxyConnector('192.168.43.1:8234'), //可以做个跳板(http proxy)
+            // 'tcp' => new Clue\React\Socks\Client('192.168.43.1:8235'), // 可以做个跳板(socket proxy)
+            // 'dns' => false,
             
         )))->connect("tcp://$host:$port")
         ->then(function (React\Socket\ConnectionInterface $connection) use ($resolve) {
